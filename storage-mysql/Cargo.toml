@@ -1,0 +1,45 @@
+[package]
+name = "solana-storage-mysql"
+description = "Solana Storage MySQL"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+async-trait = { workspace = true }
+mysql = { workspace = true }
+backoff = { workspace = true, features = ["tokio"] }
+bincode = { workspace = true }
+bytes = { workspace = true }
+flate2 = { workspace = true }
+http = { workspace = true }
+hyper = { workspace = true }
+log = { workspace = true }
+serde = { workspace = true }
+serde_derive = { workspace = true }
+solana-metrics = { workspace = true }
+solana-sdk = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+chrono = { workspace = true }
+time = { workspace = true }
+
+# openssl is a dependency of the goauth and smpl_jwt crates, but explicitly
+# declare it here as well to activate the "vendored" feature that builds OpenSSL
+# statically...
+[target."cfg(not(windows))".dependencies]
+openssl = { version = "0.10", features = ["vendored"] }
+# ...except on Windows to avoid having to deal with getting CI past a build-time
+# Perl dependency
+[target."cfg(windows)".dependencies]
+openssl = { version = "0.10", features = [] }
+
+[lib]
+crate-type = ["lib"]
+name = "solana_storage_mysql"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

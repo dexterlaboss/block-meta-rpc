@@ -1,0 +1,27 @@
+
+/target/
+
+**/*.rs.bk
+.cargo
+.env
+
+/config/
+
+/target/
+
+.cache
+
+# log files
+*.log
+log-*.txt
+log-*/
+
+# intellij files
+.idea/
+/solana.iml
+/.vscode/
+
+.DS_Store
+
+tmp/
+
