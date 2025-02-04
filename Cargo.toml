@@ -10,7 +10,7 @@ exclude = []
 resolver = "2"
 
 [workspace.package]
-version = "2.0.1"
+version = "2.0.2"
 authors = ["Dexterlab <support@dexterlab.com>"]
 repository = "https://github.com/solana-labs/solana"
 homepage = "https://dexterlab.com/"
@@ -75,10 +75,10 @@ solana-metrics = "=2.0.5"
 solana-net-utils = "=2.0.5"
 solana-perf = "=2.0.5"
 solana-rayon-threadlimit = "=2.0.5"
-block-meta-rpc = { path = "rpc", version = "=2.0.0" }
+block-meta-rpc = { path = "rpc", version = "=2.0.1" }
 solana-rpc-client-api = "=2.0.5"
 solana-sdk = "=2.0.5"
-solana-storage-mysql = { path = "storage-mysql", version = "=2.0.0" }
+solana-storage-mysql = { path = "storage-mysql", version = "=2.0.1" }
 solana-version = "=2.0.5"
 spl-memo = "=3.0.1"
 symlink = "0.1.0"
