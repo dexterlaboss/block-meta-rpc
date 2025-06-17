@@ -182,9 +182,9 @@ impl MetaStorage {
         // inc_new_counter_debug!("storage-mysql-query", 1);
         let mysql = self.connection.client();
         let start_key = slot_to_key(start_slot);
-        let end_key = slot_to_key(start_slot + limit as u64);
+        // let end_key = slot_to_key(start_slot + limit as u64);
         let blocks: Vec<u64> = mysql
-            .get_row_keys("sol_mainnet_block", Some(&start_key), Some(&end_key), limit as i64)
+            .get_row_keys("sol_mainnet_block", Some(&start_key), None, limit as i64)
             .await?;
         Ok(blocks.into_iter().map(|block| block as Slot).collect())
     }
